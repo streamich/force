@@ -13,11 +13,10 @@ export const index = async (req, res, next) => {
     },
     locals: {
       ...res.locals,
+      partnerShows: partner_shows,
       assetPackage: 'partners'
     },
-    data: {
-      partnerShows: partner_shows
-    }
+    data: {}
   })
 
   res.send(layout)
