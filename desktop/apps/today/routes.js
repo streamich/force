@@ -36,13 +36,24 @@ function ShowQuery () {
         max_distance: 50
       }
         status: CURRENT
-      size: 5
+      size: 5,
+      sort: END_AT_ASC
     ) {
       id
       name
       status
+      start_at
+      end_at
       partner {
         type
+        name
+      }
+      images(size: 1) {
+        thumb: cropped(width: 200, height: 200) {
+          width
+          height
+          url
+        }
       }
     }
   }`
