@@ -2,24 +2,29 @@ import App from 'desktop/apps/today/components/App'
 import { renderReactLayout } from 'desktop/components/react/utils/renderReactLayout'
 import metaphysics from 'lib/metaphysics.coffee'
 
-export const index = async (req, res, next) => {
-  const { partner_shows } = await metaphysics({ query: ShowQuery() })
+export async function index (req, res, next) {
+  try {
+    const { partner_shows } = await metaphysics({ query: ShowQuery() })
 
-  const layout = renderReactLayout({
-    basePath: req.app.get('views'),
-    blocks: {
-      head: 'meta.jade',
-      body: App
-    },
-    locals: {
-      ...res.locals,
-      partnerShows: partner_shows,
-      assetPackage: 'partners'
-    },
-    data: {}
-  })
+    const layout = renderReactLayout({
+      basePath: req.app.get('views'),
+      blocks: {
+        head: 'meta.jade',
+        body: App
+      },
+      locals: {
+        ...res.locals,
+        assetPackage: 'partners'
+      },
+      data: {
+        partnerShows: partner_shows
+      }
+    })
 
-  res.send(layout)
+    res.send(layout)
+  } catch (error) {
+    next(error)
+  }
 }
 
 function ShowQuery () {
