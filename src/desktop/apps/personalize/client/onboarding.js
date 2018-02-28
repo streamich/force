@@ -4,8 +4,9 @@ import { Router } from 'react-router'
 import createHistory from 'history/createBrowserHistory'
 import Cookies from 'cookies-js'
 
-import { ContextProvider } from '@artsy/reaction/dist/Components/Artsy'
-import { Wizard } from '@artsy/reaction/dist/Components/Onboarding/Wizard'
+import { ContextProvider } from 'reaction/Components/Artsy'
+import { Wizard } from 'reaction/Components/Onboarding/Wizard'
+import splitTest from 'desktop/components/split_test/index.coffee'
 
 export const init = () => {
   const bootstrapData = window.__BOOTSTRAP__
@@ -21,9 +22,24 @@ export const init = () => {
     redirectTo = bootstrapData.redirectTo
   }
 
+  const history = createHistory()
+
+  history.listen((ev) => {
+    window.scrollTo(0, 0)
+
+    // track pageviews when react-router updates the url
+    window.analytics.page(
+      { path: ev.pathname },
+      { integrations: { 'Marketo': false } }
+    )
+  })
+
+  // ONBOARDING_TEST remove after test closes
+  splitTest('onboarding_test').view()
+
   // Start app
   ReactDOM.hydrate(
-    <Router history={createHistory()}>
+    <Router history={history}>
       <ContextProvider {...bootstrapData}>
         <Wizard redirectTo={redirectTo} />
       </ContextProvider>
