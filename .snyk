@@ -1,0 +1,42 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - artsy-eigen-web-association > express > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - artsy-eigen-web-association > express > send > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - antigravity > express > send > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - artsy-eigen-web-association > express > serve-static > send > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - antigravity > express > serve-static > send > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - cookie-session > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - artsy-morgan > morgan > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+    - antigravity > express > debug:
+        patched: '2018-12-08T03:47:24.051Z'
+  'npm:marked:20170907':
+    - artsy-backbone-mixins > marked:
+        patched: '2018-12-08T03:47:24.051Z'
+  'npm:mime:20170907':
+    - artsy-eigen-web-association > express > send > mime:
+        patched: '2018-12-08T03:47:24.051Z'
+    - antigravity > express > send > mime:
+        patched: '2018-12-08T03:47:24.051Z'
+    - artsy-eigen-web-association > express > serve-static > send > mime:
+        patched: '2018-12-08T03:47:24.051Z'
+    - antigravity > express > serve-static > send > mime:
+        patched: '2018-12-08T03:47:24.051Z'
+  'npm:moment:20170905':
+    - artsy-backbone-mixins > moment:
+        patched: '2018-12-08T03:47:24.051Z'
+  'npm:ms:20170412':
+    - cookie-session > debug > ms:
+        patched: '2018-12-08T03:47:24.051Z'
+    - artsy-morgan > morgan > debug > ms:
+        patched: '2018-12-08T03:47:24.051Z'
