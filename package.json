@@ -17,7 +17,9 @@
     "prettier-write": "yarn run prettier --write",
     "start": "sh scripts/start.sh",
     "test": "sh scripts/test.sh",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "prettier": {
     "arrowParens": "always",
@@ -59,7 +61,7 @@
     "@babel/template": "7.0.0-beta.40",
     "@babel/types": "7.0.0-beta.40",
     "accounting": "^0.4.1",
-    "analytics-node": "^2.4.0",
+    "analytics-node": "^2.4.1",
     "annyang": "mzikherman/annyang",
     "antigravity": "artsy/antigravity",
     "artsy-backbone-mixins": "artsy/artsy-backbone-mixins",
@@ -103,7 +105,7 @@
     "diacritics": "^1.2.2",
     "dompurify": "^0.8.4",
     "dotenv": "^4.0.0",
-    "embed-video": "^1.2.0",
+    "embed-video": "^1.6.0",
     "embedly-view-helpers": "artsy/embedly-view-helpers",
     "enzyme": "^3.2.0",
     "express": "^4.13.3",
@@ -190,7 +192,7 @@
     "styled-components": "^2.5.0-1",
     "stylus": "^0.54.5",
     "superagent": "^2.3.0",
-    "twilio": "^2.5.1",
+    "twilio": "^2.11.1",
     "typeahead.js": "^0.10.5",
     "typescript": "^2.7.1",
     "ua-parser": "^0.3.5",
@@ -202,7 +204,8 @@
     "uuid": "^3.0.1",
     "validator": "^7.0.0",
     "waypoints": "4.0.0",
-    "xss-filters": "^1.2.6"
+    "xss-filters": "^1.2.6",
+    "snyk": "^1.120.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.6",
@@ -263,5 +266,6 @@
   "license": "MIT",
   "optionalDependencies": {
     "fsevents": "*"
-  }
+  },
+  "snyk": true
 }
