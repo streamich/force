@@ -185,7 +185,7 @@
     "scroll-frame": "^1.0.0",
     "serve-favicon": "^2.3.0",
     "sharify": "^0.1.6",
-    "standard": "^9.0.0",
+    "standard": "^11.0.0",
     "stickyfill": "^1.1.1",
     "styled-components": "^2.5.0-1",
     "stylus": "^0.54.5",
