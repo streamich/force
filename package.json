@@ -101,7 +101,7 @@
     "cookies-js": "^1.2.3",
     "cors": "^2.8.3",
     "diacritics": "^1.2.2",
-    "dompurify": "^0.8.4",
+    "dompurify": "^2.2.2",
     "dotenv": "^4.0.0",
     "embed-video": "^1.2.0",
     "embedly-view-helpers": "artsy/embedly-view-helpers",
