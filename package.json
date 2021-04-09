@@ -179,7 +179,7 @@
     "redux-mock-store": "^1.2.2",
     "redux-thunk": "^2.2.0",
     "referer-parser": "0.0.3",
-    "relay-compiler": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/relay-compiler-1.5.0-artsy.3.tgz",
+    "relay-compiler": "1.5.0",
     "relay-runtime": "https://github.com/alloy/relay/releases/download/v1.5.0-artsy.3/relay-runtime-1.5.0-artsy.3.tgz",
     "sailthru-client": "^3.0.0",
     "scroll-frame": "^1.0.0",
