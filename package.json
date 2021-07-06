@@ -13,11 +13,12 @@
     "deploy": "sh scripts/deploy.sh",
     "mocha": "sh scripts/mocha.sh",
     "precommit": "lint-staged",
-    "prepare": "patch-package",
+    "prepare": "yarn run snyk-protect && patch-package",
     "prettier-write": "yarn run prettier --write",
     "start": "sh scripts/start.sh",
     "test": "sh scripts/test.sh",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "snyk-protect": "snyk protect"
   },
   "prettier": {
     "arrowParens": "always",
@@ -43,7 +44,7 @@
   "dependencies": {
     "@artsy/express-reloadable": "^1.3.0",
     "@artsy/passport": "^1.0.7",
-    "@artsy/reaction": "0.26.3",
+    "@artsy/reaction": "22.0.0",
     "@artsy/stitch": "^1.4.0",
     "@babel/core": "7.0.0-beta.40",
     "@babel/node": "7.0.0-beta.40",
@@ -202,7 +203,8 @@
     "uuid": "^3.0.1",
     "validator": "^7.0.0",
     "waypoints": "4.0.0",
-    "xss-filters": "^1.2.6"
+    "xss-filters": "^1.2.6",
+    "snyk": "^1.653.0"
   },
   "devDependencies": {
     "@types/enzyme": "^3.1.6",
@@ -263,5 +265,6 @@
   "license": "MIT",
   "optionalDependencies": {
     "fsevents": "*"
-  }
+  },
+  "snyk": true
 }
